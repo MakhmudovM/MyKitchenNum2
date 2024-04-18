@@ -4,13 +4,15 @@ import { createBrowserRouter,RouterProvider } from 'react-router-dom'
 import MainLayout from "./Layout/MainLayout"
 
 // pgeas
-import Home from "./pages/Home/"
+import Home from "./pages/Home"
 import  Signin from "./pages/Signin"
 import Signup from "./pages/Signup"
+import About from './pages/About'
+import Contact from "./pages/Contact"
 
 // components
 import ProtectedRotes from './components/ProtectedRotes'
-import Navbar from './components/Navbar'
+
 
 
 function App(){
@@ -26,6 +28,14 @@ function App(){
            index:true,
            element :<Home/>
         },
+        {
+          path: '/about',
+          element: <About/>
+        },
+        {
+          path:'/contact',
+          element:<Contact/>
+        }
       ]
     },
     {

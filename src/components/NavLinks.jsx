@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom"
-import About from "../pages/About"
 
 const links=[
     {
@@ -10,12 +9,12 @@ const links=[
     {
         id:2,
         text :"About",
-        link:"/About",
+        link:"/about",
     },
     {
         id:3,
         text:"Contact",
-        link:"/Contact"
+        link:"/contact"
     }
 ]
 

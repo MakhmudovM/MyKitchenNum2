@@ -1,6 +1,8 @@
+import { getAuth, signInWithPopup, GoogleAuthProvider} from "firebase/auth"
+
 function Signup() {
     return (
-      <div>Sigup</div>
+      <div>Signup</div>
     )
   }
   
