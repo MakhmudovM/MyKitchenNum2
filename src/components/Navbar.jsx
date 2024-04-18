@@ -1,11 +1,23 @@
 import { Link } from "react-router-dom"
 import NavLinks from "./NavLinks"
 
+import { signOut } from "firebase/auth";
+import { auth } from "../firebase/firebaseConfig";
+
 import { useContext } from "react"
 import { GlobalContext} from "../context/useGlobalContext";
 
 function Navbar() {
   const {navbarBgColor} = useContext(GlobalContext)
+
+  const signOutFunc = () => {
+    signOut(auth)
+    .then(() => {
+      console.log("sign out");
+    }).catch((error) => {
+      console.log(error);
+    })
+  }
 
   return (
     <div className="bg-base-300 mb-10 duration-300 transition" style={{backgroundColor: navbarBgColor}}>
@@ -33,7 +45,7 @@ function Navbar() {
             </div>
             <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
              <li>
-                <a>Logout</a>
+                <button onClick={signOutFunc} className="btn btn-sm">Logout</button>
              </li>
            </ul>
         </div>

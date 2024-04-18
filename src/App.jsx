@@ -1,4 +1,4 @@
-import { createBrowserRouter,RouterProvider } from 'react-router-dom'
+import { createBrowserRouter,RouterProvider, Navigate } from 'react-router-dom'
 
 // Layout
 import MainLayout from "./Layout/MainLayout"
@@ -13,14 +13,23 @@ import Contact from "./pages/Contact"
 // components
 import ProtectedRotes from './components/ProtectedRotes'
 
+// context
 
+import { useContext, useEffect } from 'react'
+import { GlobalContext } from './context/useGlobalContext'
+
+//firebase
+
+import { auth } from './firebase/firebaseConfig'
+import { onAuthStateChanged } from 'firebase/auth'
 
 function App(){
+  const {user , dispatch, authChange} = useContext(GlobalContext)
   const routes =createBrowserRouter([
     {
       path:"/",
        element:(
-       <ProtectedRotes user={true}>
+       <ProtectedRotes user={user}>
          <MainLayout/>
        </ProtectedRotes>),
       children:[
@@ -40,14 +49,26 @@ function App(){
     },
     {
       path:"/signin",
-      element :<Signin/>,
+      element : user ? <Navigate to="/" /> : <Signin/>,
     },
     {
       path:"/signup",
-      element :<Signup/>,
+      element :user ? <Navigate to="/" /> : <Signup/>,
     },
-  ])
-  return <RouterProvider router={routes}/>
+  ]);
+
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+     dispatch({
+      type: "SIGN_IN",
+      payload: user,
+     })
+     dispatch({
+      type: "AUTH_CHANGE",
+     })
+    });
+  } , [])
+  return <>{authChange && <RouterProvider router={routes}/>}</>
 }
 
 export default App
