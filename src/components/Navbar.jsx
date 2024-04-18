@@ -8,7 +8,7 @@ import { useContext } from "react"
 import { GlobalContext} from "../context/useGlobalContext";
 
 function Navbar() {
-  const {navbarBgColor} = useContext(GlobalContext)
+  const {navbarBgColor , user } = useContext(GlobalContext)
 
   const signOutFunc = () => {
     signOut(auth)
@@ -35,12 +35,13 @@ function Navbar() {
                 <NavLinks/>
             </div>
             <div className="navbar-end">
+              {user && <p className="mr-3">{user.displayName}</p>}
             <div className="dropdown dropdown-end">
             <div tabIndex={0} 
               role="button" 
               className="btn btn-ghost btn-circle avatar">
              <div className="w-10 rounded-full">
-                <img alt="Tailwind CSS Navbar component" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                <img alt={`${user.displayName ?? "user"} image`} src={user.photoURL} />
             </div>
             </div>
             <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
