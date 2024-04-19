@@ -9,11 +9,13 @@ function Signup() {
 
     return (
       <div className="min-h-screen grid place-items-center">
-        <h2 className="font-bold text-4xl">Signup</h2>
-        <button onClick={signupWithGoogle} className="btn btn-secondary">
+       <div className="max-w-96 w-full text-center">
+       <h2 className="font-bold text-4xl mb-10">Signup</h2>
+        <button onClick={signupWithGoogle} className="btn btn-secondary mb-5">
         <FcGoogle className="text-3xl"/>
           <span className="text-2xl">Google</span></button>
-          <p><Link className="hover:text-violet-600" to="/signin">Are you already registered?</Link></p>
+          <p><Link className="hover:text-violet-600" to="/signin">Are you already registered? Login</Link></p>
+       </div>
           
       </div>
     )
