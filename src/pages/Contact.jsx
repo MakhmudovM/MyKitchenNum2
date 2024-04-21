@@ -33,7 +33,7 @@ function Contact() {
     Kolen
     <time className="text-xs opacity-50">12:45</time>
   </div>
-  <div className="chat-bubble">if there are problems with the site, then solve it yourself. I'm going to lunch!</div>
+  <div className="chat-bubble">If there are problems with the site, then solve it yourself. I'm going to lunch!</div>
   <div className="chat-footer opacity-50">
     Delivered
   </div>
