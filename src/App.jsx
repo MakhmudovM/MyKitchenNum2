@@ -27,6 +27,8 @@ import { onAuthStateChanged } from 'firebase/auth'
 
 import {action as signupAction} from "./pages/Signup"
 import {action as signinAction} from "./pages/Signin"
+import Create from './pages/Create'
+import SingleRecipe from './pages/SingleRecipe'
 
 
 function App(){
@@ -50,7 +52,17 @@ function App(){
         {
           path:'/contact',
           element:<Contact/>
-        }
+        },
+        {
+          
+          path:'/create',
+          element:<Create/>
+      },
+      {
+        path:'singleRecipe/:id',
+        element:<SingleRecipe/>
+      }
+      
       ]
     },
     {

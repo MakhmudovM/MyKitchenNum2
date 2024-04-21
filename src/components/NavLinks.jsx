@@ -2,7 +2,7 @@ import { Link } from "react-router-dom"
 
 const links=[
     {
-        Id:1,
+        id:1,
         text:"Home",
         link:"/",
     },
@@ -15,6 +15,11 @@ const links=[
         id:3,
         text:"Contact",
         link:"/contact"
+    },
+    {
+        id:4,
+        text:"Create",
+        link:"/create"
     }
 ]
 
