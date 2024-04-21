@@ -7,7 +7,7 @@ function About() {
     <div>
         <h1 className='flex items-center justify-center text-4xl mb-10'>About the author : </h1>
         <div>
-          <h2 className='text-2xl text-center mb-4'>Author <a className='link text-teal-300' href="https://t.me/Kolen7z">Kolen</a> (Mukhammadzoir Makhmudov)</h2>
+          <h2 className='text-2xl text-center mb-4'>Author <a className='link text-teal-300 hover:text-violet-600' href="https://t.me/Kolen7z">Kolen</a> (Mukhammadzoir Makhmudov)</h2>
 
           <div className="stats shadow flex justify-center item-center mb-4	 ">
   
@@ -77,8 +77,8 @@ function About() {
         </div>
         <p className='text-center text-2xl text-teal-300 mb-4'>you can view and evaluate the works on the following platforms :</p>
         <div className='flex justify-center items-center gap-4 mb-10'>
-          <a href="https://github.com/MakhmudovM" target="blanck"><VscGithub className="w-7 h-7"/></a>
-          <a href="https://t.me/kolen_projects" target="blanck"><FaTelegram className="w-7 h-7"/></a>
+          <a href="https://github.com/MakhmudovM" target="blanck"><VscGithub className="w-7 h-7 hover:text-violet-600"/></a>
+          <a href="https://t.me/kolen_projects" target="blanck"><FaTelegram className="w-7 h-7 hover:text-violet-600"/></a>
         </div>
     
     </div>

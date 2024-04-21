@@ -12,10 +12,10 @@ function Contact() {
       <div>
         <h2 className="text-center text-2xl mb-4">you can do this as follows :</h2>
         <div className='flex justify-center items-center gap-4 mb-10'>
-          <a href="https://wa.me/998998546803?text=%D0%B2%D0%B0%D1%81%20%D0%BF%D1%80%D0%B8%D0%B2%D0%B5%D1%82%D1%81%D1%82%D0%B2%D1%83%D0%B5%D1%82%20%D1%81%D0%BB%D1%83%D0%B6%D0%B1%D0%B0%20%D0%BF%D0%BE%D0%B4%D0%B4%D0%B5%D1%80%D0%B6%D0%BA%D0%B8" target="blanck"><FaWhatsapp className="w-7 h-7"/></a>
-          <a href="https://t.me/Kolen7z" target="blanck"><FaTelegram className="w-7 h-7"/></a>
-          <a href="https://www.instagram.com/kolen_z/" target="blanck"><FaInstagram className="w-7 h-7"/></a>
-          <a href="https://discord.com/channels/1028028791043391548/1028028791043391551" target="blanck"><FaDiscord className="w-7 h-7"/></a>
+          <a href="https://wa.me/998998546803?text=%D0%B2%D0%B0%D1%81%20%D0%BF%D1%80%D0%B8%D0%B2%D0%B5%D1%82%D1%81%D1%82%D0%B2%D1%83%D0%B5%D1%82%20%D1%81%D0%BB%D1%83%D0%B6%D0%B1%D0%B0%20%D0%BF%D0%BE%D0%B4%D0%B4%D0%B5%D1%80%D0%B6%D0%BA%D0%B8" target="blanck"><FaWhatsapp className="w-7 h-7 hover:text-violet-600"/></a>
+          <a href="https://t.me/Kolen7z" target="blanck"><FaTelegram className="w-7 h-7 hover:text-violet-600"/></a>
+          <a href="https://www.instagram.com/kolen_z/" target="blanck"><FaInstagram className="w-7 h-7 hover:text-violet-600"/></a>
+          <a href="https://discord.com/channels/1028028791043391548/1028028791043391551" target="blanck"><FaDiscord className="w-7 h-7 hover:text-violet-600"/></a>
         </div>
         <p className="text-center text-2xl mb-4">or</p>
         <div className="flex items-center justify-center">
