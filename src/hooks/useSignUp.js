@@ -31,8 +31,8 @@ function useSignUp() {
         createUserWithEmailAndPassword(auth, email, password)
   .then(async(userCredential) => {
     await updateProfile(auth.currentUser, {
-      displayName: name,
       photoURL: photo,
+      displayName: name,
     })
     const user = userCredential.user;
     dispatch({type: "SIGN_IN" , payload: user})

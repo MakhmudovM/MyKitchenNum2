@@ -9,10 +9,11 @@ import { useEffect } from "react";
 export const action = async ({request}) => {
   let formData = await request.formData();
   let name = formData.get("Name");
+  let photo = formData.get("Photo");
   let email = formData.get("Email");
   let password = formData.get("Password");
 
-  return  { name , email , password };
+  return  { name , photo , email , password };
 }
 
 function Signup() {
@@ -23,7 +24,6 @@ function Signup() {
   useEffect(() => {
     if (userSignup) {
       signupWithEmailAndPassword(userSignup.name, userSignup.photo, userSignup.email , userSignup.password)
-      
     }
   } , [userSignup])
 

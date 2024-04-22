@@ -1,41 +1,14 @@
-
-import { useEffect, useState } from "react";
+import { useCollection } from "../hooks/useColection"
 import RecipiesList from "../components/RecipiesList";
 
-
 function Home() {
-  const [recipies, setRecipies] = useState(null)
-  const [check , setCheck] = useState(0)
-
-  useEffect (() => {
-    fetch("http://localhost:3000/recipies")
-  .then((data) => {
-    return data.json();
-  })
-  .then((recipies) =>{
-    setRecipies(recipies);
-  })
-  .catch((error) => {
-    console.log(error)
-  })
-  }, [check]);
-
-  const deleteRecipie = (id) => {
-    fetch('http://localhost:3000/recipies/' + id, {
-      method: "DELETE"
-    })
-    .then((data) => {
-      return data.json();
-    })
-    .then((data) => {
-      setCheck(Math.random())
-    })
-    .catch((error) => console.log(error));
-  };
-  return (
-    <div>
-     {recipies && <RecipiesList recipies={recipies} deleteRecipie={deleteRecipie}/>}
-    </div>
+  const {data:recipies} =useCollection()
+  console.log(recipies && recipies.length);
+  return(
+  <div className="mb-10">
+    <h1 className="text-3xl font-bold">All Recipies-{recipies && recipies.length}</h1>
+    {recipies && <RecipiesList recipies={recipies}/>}
+  </div>
   )
 }
 
