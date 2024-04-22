@@ -1,4 +1,4 @@
-import {  signInWithPopup, GoogleAuthProvider, createUserWithEmailAndPassword } from "firebase/auth"
+import {  signInWithPopup, GoogleAuthProvider, createUserWithEmailAndPassword, updateProfile } from "firebase/auth"
 import { auth } from "../firebase/firebaseConfig"
 import { useState } from "react"
 
@@ -27,9 +27,13 @@ function useSignUp() {
       })
       }
 
-      const signupWithEmailAndPassword = (email , password) => {
+      const signupWithEmailAndPassword = (name , photo , email , password) => {
         createUserWithEmailAndPassword(auth, email, password)
-  .then((userCredential) => {
+  .then(async(userCredential) => {
+    await updateProfile(auth.currentUser, {
+      displayName: name,
+      photoURL: photo,
+    })
     const user = userCredential.user;
     dispatch({type: "SIGN_IN" , payload: user})
 

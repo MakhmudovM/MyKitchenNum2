@@ -155,10 +155,6 @@ function Create() {
               onChange={(e) => setImg(e.target.value)}
               value={img}
             />
-
-            <button onClick={addIngredient} className="btn btn-success">
-              +
-            </button>
           </div>
         </label>
         <label className="form-control w-full max-w-xs">

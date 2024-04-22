@@ -22,7 +22,8 @@ function Signup() {
 
   useEffect(() => {
     if (userSignup) {
-      signupWithEmailAndPassword(userSignup.email , userSignup.password)
+      signupWithEmailAndPassword(userSignup.name, userSignup.photo, userSignup.email , userSignup.password)
+      
     }
   } , [userSignup])
 
@@ -32,6 +33,7 @@ function Signup() {
        <h2 className="font-bold text-4xl mb-10">Signup</h2>
        <Form method="POST">
        <FormInput type="text" label="Name:" name="Name"/>
+       <FormInput type="url" label="PhotoUrl" name="Photo"/>
        <FormInput type="email" label="Email:" name="Email"/>
        <FormInput type="password" label="Password:" name="Password"/>
         <div>
